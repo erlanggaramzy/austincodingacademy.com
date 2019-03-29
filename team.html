@@ -27,7 +27,7 @@ profiles:
       icon: fab fa-linkedin
       hex: "#0077b5"
   - name: Kevin Colten
-    title: Chief Technology Officer + Lead Instructor
+    title: CTO + Lead Instructor
     email: kevin@austincodingacademy.com
     bio: "A life-learner and new technology nerd, Kevin works hard at the things he loves: programming, teaching, and learning. As a software developer of more than six years and a teacher of more than ten, he has combined his teaching experience and passion for coding to help create an accessible, living, and relevant curriculum aimed to open up the tech industry to those determined to break in."
     links:
@@ -44,7 +44,7 @@ profiles:
       icon: fab fa-github
       hex: "#303133"
   - name: Dan Cumming
-    title: Director of Placement and Partnerships
+    title: Director of Placement &amp; Partnerships
     email: dan@austincodingacademy.com
     bio: "As a humble hustler, I've grown with Austin Coding Academy over the last three years holding several roles wherever I could add value to the school and to the students. I graduated with a Journalism BS from University of Richmond (go Spiders!), and got my professional start with sales and leadership. I've traveled coast-to-coast on my motorcycle several times, which led me to find a true home here in Austin in 2014. I'm all about connecting, so say hello!"
     links:
@@ -72,7 +72,7 @@ profiles:
       icon: fab fa-github
       hex: "#303133"
   - name: Nai Obeid
-    title: Compliance &amp; Design Specialist
+    title: Compliance &amp; Design
     email: nai@austincodingacademy.com
     bio: "I'm a graphic designer from Lebanon. I moved here 9 years ago for a new adventure and I've been lucky to call Austin home since. When I'm not at work, I'm usually at one of Austin's many amazing coffee shops, making art or planning my next trip or both.
         Creating beautiful things is my passion. Being at ACA allows me to do what I love everyday, surrounded by the best team."
@@ -135,22 +135,42 @@ profiles:
     Meet the Team
   </h2>
   <div class="row my-5 mx-auto d-flex justify-content-start">
-    <div class="col-12 col-md">
+    <div class="col-12 col-lg">
       <div class="row">
         {% for profile in page.profiles %}
-          <div class="col-4 p-1">
-            <div>
-              <!-- htmllint preset="none" -->
-              <amp-img
+          <div class="col-4 p-1" on="tap:team-icon-{{ forloop.index }}.toggleVisibility">
+            <!-- htmllint preset="none" -->
+            <amp-img
               width="200"
               height="200"
               layout="responsive"
               class="img-fluid w-100 rounded"
-              src="https://gravatar.com/avatar/{{ profile.email | downcase | md5 }}?s=300&r=pg"
+              src="https://gravatar.com/avatar/{{ profile.email | downcase | md5 }}?s=300&r=pg&d=https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
               alt="{{ profile.name }}"
-              ></amp-img>
-              <!-- htmllint preset="$previous" -->
+            ></amp-img>
+            <!-- htmllint preset="$previous" -->
+            <div id="team-icon-{{ forloop.index }}" style="visibility:visible">
+              <div class="px-2 pt-1 position-absolute w-100 text-left" style="z-index: 1000; top: 0; background-color: rgba(255,255,255,0.4)">
+                <small class="font-weight-bold" style="text-shadow: 0 0 2px white">
+                  {{ profile.title }}
+                </small>
+              </div>
+              <div class="pl-2 pb-1 position-absolute w-100 text-left" style="z-index: 1000; bottom: 0; background-color: rgba(255,255,255,0.4)">
+                <small class="font-weight-bold" style="text-shadow: 0 0 2px white">
+                  {{ profile.name }}
+                </small>
+              </div>
             </div>
+            <!-- <amp-animation id="hover-animation-{{ forloop.index }}" layout="nodisplay">
+              <script type="application/json">
+                {
+                  "selector": "team-icon-{{ forloop.index }}",
+                  "duration": "750ms",
+                  "fill": "both",
+                  "keyframes": {"opacity": [0,1]}
+                }
+              </script>
+            </amp-animation> -->
           </div>
         {% endfor %}
       </div>
