@@ -18,7 +18,7 @@ const fetchEvents = async () => {
       status: 'live'
     })}`, { headers });
     const json = await response.json();
-    const austinEvents = json.events.filter(event => event.organizer_id === '10937668459');
+    const austinEvents = json.events.filter(event => event.organizer_id === '10937668459' && event.listed);
     console.log(`Found ${austinEvents.length} events.`)
     let venues = await Promise.all(uniq(austinEvents.map(event => event.venue_id)).map(venueId =>
       fetch(`https://www.eventbriteapi.com/v3/venues/${venueId}`, { headers })
