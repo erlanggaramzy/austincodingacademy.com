@@ -256,6 +256,10 @@ body, p {
   text-shadow: 1px 1px #f5b02c;
 }
 
+.photo-hover:hover {
+  box-shadow: 0 0 10px rgba(45,47,119, 0.7);
+}
+
 /* HERO IMAGES */
 
 .hero {
