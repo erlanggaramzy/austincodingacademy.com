@@ -37,10 +37,12 @@ workexperience:
     dates: August 2015 - May 2017, February 2018 - Present
     title: Research Assistant
     location: Austin, TX
+    logo: https://upload.wikimedia.org/wikipedia/en/e/e1/University_of_Texas_at_Austin_seal.svg
   - company: Vizual Wanders
     dates: June 2017 - August 2018
     title: Intern
     location: Houston, TX
+    logo: https://static.wixstatic.com/media/d591ca_e5ef7f947b23486083089bf3e57e6a79~mv2_d_2829_1913_s_2.png/v1/crop/x_1106,y_501,w_613,h_653/fill/w_94,h_100,al_c,q_80,usm_0.66_1.00_0.01/d591ca_e5ef7f947b23486083089bf3e57e6a79~mv2_d_2829_1913_s_2.webp
 
 education:
   - name: Austin Coding Academy
